@@ -1,36 +1,17 @@
-let object = {year : 2024, month : 'june', day : 12}
-console.log(object.month)
-
-object.month = 'april'
-console.log(object.month)
-
-
-let str : string = 12+''
-let numb : number = +'12'
-
-
-
-let result : number = 0;
-
-for (let i : number = 0; i < 100; i++) {
-	result += i;
+interface MyObject {
+    [key: string]:number;
+    a: number;
+    b: number;
+    c: number;
 }
 
-console.log(result);
+let obj: MyObject = {a: 1, b:2, d:4, c: 3, "123":123};
+let res: number = 0;
 
-
-let arr : number[] = [1, 2, 3, 4, 5];
-let res : number = 0;
-
-for (let elem of arr) {
-	res += elem;
+for (let key in obj) {
+    let elem: number = obj[key];
+    res += elem;
+    console.log(key, ":\t", obj[key])
 }
 
-console.log(res);
-
-// let array:number[] = [1,2,3,4]           // there is a mistake
-// let arr:Array<number> = [1,2,3,4]
-// let result : boolean = true
-// if (arr != array)       
-//     result = false
-// console.log(result)
+console.log("Result is ", res);
