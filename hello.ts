@@ -1,22 +1,15 @@
+let user: [string, number, boolean?];
 
-function sum(array : number[]):number{
-    let res : number = 0
-    for (let num of array){
-        res+=num
-    }
-    return res
-}
+user = ['vova', 31]
+console.log(user)
 
-let array : number[] = [1,3,4,5]
-console.log(array, ' = ', sum(array))
+user[2] = false
+console.log(user)
 
-let nn : number | null;
-let nsb : number | string | boolean;
-let aaa : any
-let vvv : void
+let user_r: readonly [string, number]
 
-type nu = null | undefined
-type bnu = boolean | nu
+let array_a : any[] = ['vova', 31, 'qwerty', false, true, undefined]
+let array_ns : (number | string)[] = ['vova', 31, 'qwerty', 42]
 
-type stat_type = 'error' | 'warning' | 'success'
-let prog_stat : stat_type = 'warning'
+console.log(array_a)
+console.log(array_ns)
