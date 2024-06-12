@@ -1,7 +1,6 @@
-let ival : number = 42
-let sval : string = 'string'
-let bval : boolean = true
-
-console.log('Number:\t\t', ival, 
-    '\nString:\t\t', sval, 
-    '\nBoolean:\t', bval)
+let array:number[] = [1,2,3,4]
+let arr:Array<number> = [1,2,3,4]
+let result : boolean = true
+// if (arr != array)       // there is a mistake
+//     result = false
+console.log(result)
