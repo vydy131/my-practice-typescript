@@ -17,3 +17,7 @@ console.log(array_ns)
 interface my_inter {
     [key : string] : number | undefined | string | boolean
 }
+
+let time: [number, number, number] = [12, 59, 59];
+let [hour, minute, second] = time
+console.log(hour, minute, second)
