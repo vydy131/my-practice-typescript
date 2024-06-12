@@ -13,3 +13,7 @@ let array_ns : (number | string)[] = ['vova', 31, 'qwerty', 42]
 
 console.log(array_a)
 console.log(array_ns)
+
+interface my_inter {
+    [key : string] : number | undefined | string | boolean
+}
