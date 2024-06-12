@@ -1,5 +1,11 @@
-function sum(arg1:number, arg2:number) : number{
-    return arg2+arg1;
+
+function sum(array : number[]):number{
+    let res : number = 0
+    for (let num of array){
+        res+=num
+    }
+    return res
 }
 
-console.log(sum(1,2))
+let array : number[] = [1,3,4,5]
+console.log(array, ' = ', sum(array))
