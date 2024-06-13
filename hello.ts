@@ -1,20 +1,46 @@
-// enum Week {monday, tuesday, wednesday, thursday, friday, saturday, sunday}
-// let day : string = Week[0]
-// console.log(day)
+// let func = function(num1: number, num2: number): number {
+// 	return num1 + num2;
+// }
 
-// let key : number = Week.sunday
-// console.log(key)
+let func = (num1: number, num2: number) : number => num1+num2
 
-// let now : Date = new Date
-// let whenever : Date = new Date(2021, 10, 3)
-// console.log(now, "\t", whenever)
+// let arr = [1, 2, 3];
+// let res = arr.map(num => num ** 2);
+// console.log(res);
+
+let arr : number[] = [1,2,3]
+let res : number[] = arr.map(num => num **2)
+console.log(res)
 
 
-// let fun_var : ( x: number, y: number) => number;
-// function sum (a: number, b: number): number {return a+b}
-// fun_var = sum
+// type Func = (num: number) => number;
 
-// let func : (text:string) => void
-// func = function(text: string): void {
-// 	alert(text);
-// };
+// function make(arr: number[], func: Func): number {
+// 	let sum = 0;
+	
+// 	for (let elem of arr) {
+// 		sum += func(elem);
+// 	}
+	
+// 	return sum;
+// }
+
+// let res: number = make([1, 2, 3], function(num): number {
+// 	return num ** 2;
+// });
+
+// console.log(res);
+
+// type Func = (num: number) => number;
+
+// function make(arr: number[], func: Func): number[] {
+// 	return arr.map(function(elem: number) {
+// 		return func(elem);
+// 	});
+// }
+
+// let res: number[] = make([1, 2, 3], function(num: number): number {
+// 	return num ** 2;
+// });
+
+// console.log(res);
