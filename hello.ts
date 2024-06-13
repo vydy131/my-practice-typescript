@@ -1,46 +1,23 @@
-// let func = function(num1: number, num2: number): number {
-// 	return num1 + num2;
-// }
+class Man {
+    _name : string
+    _age : number
 
-let func = (num1: number, num2: number) : number => num1+num2
+    age(numb ?: number) : number {
+        if (numb !== undefined){
+            this._age = numb
+        }
+        return this._age;
+    }
 
-// let arr = [1, 2, 3];
-// let res = arr.map(num => num ** 2);
-// console.log(res);
+    name(str ?: string) : string {
+        if (str !== undefined){
+            this._name = str
+        }
+        return this._name;
+    }
 
-let arr : number[] = [1,2,3]
-let res : number[] = arr.map(num => num **2)
-console.log(res)
-
-
-// type Func = (num: number) => number;
-
-// function make(arr: number[], func: Func): number {
-// 	let sum = 0;
-	
-// 	for (let elem of arr) {
-// 		sum += func(elem);
-// 	}
-	
-// 	return sum;
-// }
-
-// let res: number = make([1, 2, 3], function(num): number {
-// 	return num ** 2;
-// });
-
-// console.log(res);
-
-// type Func = (num: number) => number;
-
-// function make(arr: number[], func: Func): number[] {
-// 	return arr.map(function(elem: number) {
-// 		return func(elem);
-// 	});
-// }
-
-// let res: number[] = make([1, 2, 3], function(num: number): number {
-// 	return num ** 2;
-// });
-
-// console.log(res);
+    constructor(name: string = '', age: number = 0){
+        this._name = name;
+        this._age = age;
+    }
+}
