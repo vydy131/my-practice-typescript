@@ -24,3 +24,6 @@ let fig : Figure = {kind : "circle", radius : 5}
 console.log(area(fig))
 fig = {kind : 'rectangle', length : 10, width : 5}
 console.log(area(fig))
+
+fig = {kind : "circle", radius : 5}
+console.log(area(fig))
