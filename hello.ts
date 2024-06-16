@@ -1,29 +1,42 @@
-interface Circle{
-    kind : 'circle'
-    radius : number
-}
-
-interface Rectangle {
-    kind : 'rectangle'
-    length : number
-    width : number
-}
-
-type Figure = Circle | Rectangle
-
-function area(fig : Figure) : number {
-    if (fig.kind === "circle"){
-        return (fig.radius ** 2) * 3.14
+class Dog {
+    _name : string;
+    constructor ( name : string = 'dog'){
+        this._name = name
     }
-    else {
-        return fig.length * fig.width
+    sayHello() : string {
+        return `Hello, I'm ${this._name}`
+    }
+
+}
+
+class Fish {
+    _name : string;
+    constructor ( name : string = 'fish'){
+        this._name = name
+    }
+    dive(howDeep : number) : string {
+        return `I'm at the depth of ${howDeep} meters`
     }
 }
 
-let fig : Figure = {kind : "circle", radius : 5}
-console.log(area(fig))
-fig = {kind : 'rectangle', length : 10, width : 5}
-console.log(area(fig))
+type Pet = Dog | Fish
 
-fig = {kind : "circle", radius : 5}
-console.log(area(fig))
+function talkToPet(pet : any) : string {
+    if (pet instanceof Dog) { 
+        return pet.sayHello();
+    } 
+    else if (pet instanceof Fish) {
+        return 'Fish cannot talk, sorry.';
+    }
+    else {return 'error: wrong type of variable'}
+}
+
+let pet1 : Pet = new Dog()
+let pet2 : Pet = new Fish()
+let pet3 : undefined
+let pet4
+
+console.log(talkToPet(pet1))
+console.log(talkToPet(pet2))
+console.log(talkToPet(pet3))
+console.log(talkToPet(pet4))

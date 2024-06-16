@@ -1,14 +1,36 @@
-function area(fig) {
-    if (fig.kind === "circle") {
-        return (Math.pow(fig.radius, 2)) * 3.14;
+"use strict";
+class Dog {
+    constructor(name = 'dog') {
+        this._name = name;
     }
-    else {
-        return fig.length * fig.width;
+    sayHello() {
+        return `Hello, I'm ${this._name}`;
     }
 }
-var fig = { kind: "circle", radius: 5 };
-console.log(area(fig));
-fig = { kind: 'rectangle', length: 10, width: 5 };
-console.log(area(fig));
-fig = { kind: "circle", radius: 5 };
-console.log(area(fig));
+class Fish {
+    constructor(name = 'fish') {
+        this._name = name;
+    }
+    dive(howDeep) {
+        return `I'm at the depth of ${howDeep} meters`;
+    }
+}
+function talkToPet(pet) {
+    if (pet instanceof Dog) {
+        return pet.sayHello();
+    }
+    else if (pet instanceof Fish) {
+        return 'Fish cannot talk, sorry.';
+    }
+    else {
+        return 'error: wrong type of variable';
+    }
+}
+let pet1 = new Dog();
+let pet2 = new Fish();
+let pet3;
+let pet4;
+console.log(talkToPet(pet1));
+console.log(talkToPet(pet2));
+console.log(talkToPet(pet3));
+console.log(talkToPet(pet4));
