@@ -16,3 +16,8 @@ switch (user.role) {
         console.log(UserRole.Mgr);
         break;
 }
+const outerFunc = (someValue) => (multiplier) => someValue * multiplier;
+// = (multiplier : number) => 10 * multiplier
+const innerFunc = outerFunc(10);
+let result = innerFunc(7);
+console.log(result);
