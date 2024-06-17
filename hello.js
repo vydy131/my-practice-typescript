@@ -1,23 +1,19 @@
 "use strict";
-var UserRole;
-(function (UserRole) {
-    UserRole["Admin"] = "administrator";
-    UserRole["Mgr"] = "manager";
-})(UserRole || (UserRole = {}));
-const loadUser = () => JSON.parse(`{
-    "name" : "john", 
-    "role" : "administrator"}`);
-const user = loadUser();
-switch (user.role) {
-    case UserRole.Admin:
-        console.log(UserRole.Admin);
-        break;
-    case UserRole.Mgr:
-        console.log(UserRole.Mgr);
-        break;
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function whoAmI(target) {
+    console.log(`You are: \n ${target}`);
 }
-const outerFunc = (someValue) => (multiplier) => someValue * multiplier;
-// = (multiplier : number) => 10 * multiplier
-const innerFunc = outerFunc(10);
-let result = innerFunc(7);
-console.log(result);
+let Friend = class Friend {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+};
+Friend = __decorate([
+    whoAmI
+], Friend);
