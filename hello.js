@@ -1,36 +1,18 @@
 "use strict";
-class Dog {
-    constructor(name = 'dog') {
-        this._name = name;
-    }
-    sayHello() {
-        return `Hello, I'm ${this._name}`;
-    }
+var UserRole;
+(function (UserRole) {
+    UserRole["Admin"] = "administrator";
+    UserRole["Mgr"] = "manager";
+})(UserRole || (UserRole = {}));
+const loadUser = () => JSON.parse(`{
+    "name" : "john", 
+    "role" : "administrator"}`);
+const user = loadUser();
+switch (user.role) {
+    case UserRole.Admin:
+        console.log(UserRole.Admin);
+        break;
+    case UserRole.Mgr:
+        console.log(UserRole.Mgr);
+        break;
 }
-class Fish {
-    constructor(name = 'fish') {
-        this._name = name;
-    }
-    dive(howDeep) {
-        return `I'm at the depth of ${howDeep} meters`;
-    }
-}
-function talkToPet(pet) {
-    if (pet instanceof Dog) {
-        return pet.sayHello();
-    }
-    else if (pet instanceof Fish) {
-        return 'Fish cannot talk, sorry.';
-    }
-    else {
-        return 'error: wrong type of variable';
-    }
-}
-let pet1 = new Dog();
-let pet2 = new Fish();
-let pet3;
-let pet4;
-console.log(talkToPet(pet1));
-console.log(talkToPet(pet2));
-console.log(talkToPet(pet3));
-console.log(talkToPet(pet4));
