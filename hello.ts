@@ -1,8 +1,7 @@
-function whoAmI (target: Function): void {
-    console.log(`You are: \n ${target}`)
-}
+const food = ['qw', 'er', 'ty']
 
-@whoAmI
-class Friend {
- constructor(private name: string, private age: number){}
-}
+food.forEach((item, index, arr) => {
+  console.log('Текущий элемент ' + item)
+  console.log('Его индекс ' + index)
+  console.log('Исходный массив ' + arr)
+})
